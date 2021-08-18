@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$Red: hsl(0, 100%, 68%);
+
+$Very-Dark-Blue: hsl(230, 29%, 20%);
+$Dark-Grayish-Blue: hsl(230, 11%, 40%);
+$Grayish-Blue: hsl(231, 7%, 65%);
+$Light-Grayish-Blue: hsl(207, 33%, 95%);
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  overflow-x: hidden;
+  padding: 2rem 1.5rem;
+  height: 100vh;
+}
+
+.ilustration {
+  padding: 3rem 0;
+  width: 110vw;
+}
+
+h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.441rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.intro {
+  text-transform: uppercase;
+  color: $Dark-Grayish-Blue;
+  font-size: 0.8rem;
+  span {
+    background-color: $Very-Dark-Blue;
+    color: $Light-Grayish-Blue;
+    font-weight: bold;
+    border-radius: 2rem;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+    letter-spacing: 0;
+  }
+
+  &:not(.intro span) {
+    letter-spacing: 0.25rem;
+  }
+}
+
+input[type="button"] {
+  background-color: $Red;
+  color: $Light-Grayish-Blue;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    background: hsl(0, 100%, 78%);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $Grayish-Blue;
+  margin-left: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.txt {
+  color: $Very-Dark-Blue;
+  padding-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+input,
+a {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.8rem;
+}
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: white;
+  width: 19rem;
+  list-style: none;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.13);
+  text-align: center;
+  border-radius: 0.2rem;
+  padding: 1rem;
+
+  li {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 3rem;
+  }
+}
+.log {
+  border-top: 1px solid $Grayish-Blue;
+  color: $Grayish-Blue;
+}
+
+@media (min-width: 1440px) {
+  .open,
+  .close {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    gap: 3rem;
+    position: unset;
+    transform: unset;
+    box-shadow: unset;
+    background: unset;
+    left: unset;
+    bottom: unset;
+    width: unset;
+    padding: unset;
+    li {
+      line-height: unset;
+    }
+    .log {
+      border: unset;
+      padding-left: 2rem;
+    }
+  }
+  .ilustration {
+    width: 100vmin;
+    transform: translateX(10%);
+  }
+  main {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "body img";
+    justify-content: center;
+    align-items: center;
+    .img {
+      grid-area: img;
+    }
+    .body {
+      grid-area: body;
+    }
+  }
+
+  body {
+    padding-top: 3rem;
+    padding-left: 10rem;
+  }
+  h3 {
+    font-size: 3.052rem;
+    max-width: 20ch;
+  }
+
+  h3 + p {
+    max-width: 27ch;
+  }
+}
+
+li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.tlo {
+  z-index: -1;
+  position: absolute;
+  width: 45%;
+  top: 0;
+  right: 0;
+  height: 50%;
+  background-color: $Light-Grayish-Blue;
+  border-radius: 0 0 0 15rem;
+}
